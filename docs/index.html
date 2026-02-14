@@ -183,16 +183,6 @@ button{
   <source src="./Arerey_Manasa.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
-<button id="playMusic" style="position:fixed;bottom:12px;left:12px;padding:8px 12px;border-radius:8px;background:#fff;color:#000;border:none;cursor:pointer;z-index:9999">Play Music</button>
-
-<script>
-  const _audio = document.getElementById('bgAudio');
-  const _playBtn = document.getElementById('playMusic');
-  _playBtn.addEventListener('click', () => {
-    _audio.play().catch(()=>{});
-    _playBtn.style.display = 'none';
-  });
-</script>
 
 <!-- ENVELOPE SECTION -->
 <div class="envelope" onclick="openLetter()"></div>
@@ -241,6 +231,8 @@ function openLetter(){
   document.querySelector(".envelope").style.display="none";
   document.querySelector("h2").style.display="none";
   document.getElementById("main").style.display="block";
+  const _a = document.getElementById('bgAudio');
+  if(_a){ _a.play().catch(()=>{}); }
 }
 
 /* Countdown */
