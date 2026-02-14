@@ -179,12 +179,12 @@ button{
 <body>
 
 <!-- MUSIC -->
-<audio autoplay loop>
+<audio id="bgAudio" loop preload="auto" playsinline>
   <source src="./Arerey_Manasa.mp3" type="audio/mpeg">
 </audio>
 
 <!-- ENVELOPE SECTION -->
-<div class="envelope" onclick="openLetter()"></div>
+<div class="envelope" onclick="openLetter();document.getElementById('bgAudio')?.play().catch(()=>{});"></div>
 <h2>Click the envelope 💌</h2>
 
 <!-- MAIN CONTENT -->
